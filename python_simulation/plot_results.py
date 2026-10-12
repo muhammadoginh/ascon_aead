@@ -1,7 +1,7 @@
 """
 plot_results.py - figures and tables for the letter from the simulation
 (results/*.csv, written by multilink_sim.py --sweep paper) and the Vivado
-scaling run (build/multi_scaling/<part>/scaling.csv).
+Fmax search (build/fmax_ooc/<part>/ascon_aead_array_K*/summary.txt).
 
 Outputs (figures/): PDF for LaTeX + PNG preview
     fig_multilink_delay     C2 gateway crypto delay (p99) vs links, K = 1/2/4/8,
@@ -9,7 +9,8 @@ Outputs (figures/): PDF for LaTeX + PNG preview
     fig_multilink_delivery  bulk delivered share vs links (saturation)
     fig_crypto_overhead     AEAD time (encrypt + decrypt) per message type
     fig_scheduler           C2 delay, priority vs FIFO scheduling (K = 1)
-    fig_scaling             LUT / FF of ascon_aead_axi_multi vs K
+    fig_scaling             ascon_aead_array #(K) after place and route: LUT / FF and
+                            closed-timing Fmax vs K (build/fmax_ooc/.../summary.txt)
     table_latency.tex       Table II: latency without / with AEAD per message
 
 Sizes follow IEEE: single column 3.5 in, double column 7.16 in, 8 pt text.
@@ -34,7 +35,6 @@ from matplotlib.ticker import FuncFormatter  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 RESULTS = os.path.join(HERE, "results")
 FIGURES = os.path.join(HERE, "figures")
-SCALING = os.path.join(HERE, "..", "build", "multi_scaling", "xc7z020clg400-1", "scaling.csv")
 
 # ---------------------------------------------------------------------------
 # Style: reference categorical palette, fixed slot order (blue, orange, aqua,
@@ -261,24 +261,58 @@ def table_latency(rows, params):
 # ---------------------------------------------------------------------------
 # Resource scaling (Vivado)
 # ---------------------------------------------------------------------------
+def read_arch_scaling():
+    """Closed-timing post-route results of ascon_aead_array #(K) (find_fmax_ooc.tcl)."""
+    rows = []
+    base = os.path.join(HERE, "..", "build", "fmax_ooc", "xc7z020clg400-1")
+    for k in (1, 2, 4, 8):
+        path = os.path.join(base, f"ascon_aead_array_K{k}", "summary.txt")
+        r = read_csv(path)
+        if r:
+            r = r[0]
+            r["K"] = k
+            rows.append(r)
+    return rows
+
+
 def fig_scaling(rows):
+    """(a) LUT / FF vs K, (b) closed-timing Fmax vs K - one axis per panel."""
     rows = sorted(rows, key=lambda r: r["K"])
     ks = [int(r["K"]) for r in rows]
-    fig, ax = plt.subplots(figsize=(SINGLE, 2.1))
+    xs = list(range(len(ks)))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(SINGLE, 1.9), gridspec_kw={"width_ratios": [1.35, 1]})
+
     w = 0.38
-    xs = range(len(ks))
-    ax.bar([x - w / 2 for x in xs], [r["lut"] for r in rows], width=w - 0.04, color=SLOT[0],
-           hatch=HATCHES[0], edgecolor="white", linewidth=0.4, label="Slice LUTs")
-    ax.bar([x + w / 2 for x in xs], [r["ff"] for r in rows], width=w - 0.04, color=SLOT[1],
-           hatch=HATCHES[1], edgecolor="white", linewidth=0.4, label="Slice registers")
+    ax1.bar([x - w / 2 for x in xs], [r["lut"] for r in rows], width=w - 0.04, color=SLOT[0],
+            hatch=HATCHES[0], edgecolor="white", linewidth=0.4, label="LUTs")
+    ax1.bar([x + w / 2 for x in xs], [r["ff"] for r in rows], width=w - 0.04, color=SLOT[1],
+            hatch=HATCHES[1], edgecolor="white", linewidth=0.4, label="FFs")
     for x, r in zip(xs, rows):
-        ax.text(x - w / 2, r["lut"], f"{int(r['lut']):,}", ha="center", va="bottom", fontsize=6, color=INK2)
-    ax.set_xticks(list(xs))
-    ax.set_xticklabels([f"K = {k}" for k in ks])
-    ax.set_ylabel("Resources (count)")
-    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _p: f"{v / 1000:g}k" if v else "0"))
-    ax.legend(loc="upper left")
-    style_axes(ax)
+        ax1.text(x - w / 2, r["lut"], f"{int(r['lut']):,}", ha="center", va="bottom", fontsize=5.5, color=INK2)
+    ax1.set_xticks(xs)
+    ax1.set_xticklabels([str(k) for k in ks])
+    ax1.set_xlabel("Cores K")
+    ax1.set_ylabel("Resources")
+    ax1.yaxis.set_major_formatter(FuncFormatter(lambda v, _p: f"{v / 1000:g}k" if v else "0"))
+    ax1.legend(loc="upper left", handlelength=1.2)
+    ax1.set_title("(a)", loc="left")
+    style_axes(ax1)
+
+    ax2.plot(xs, [r["fmax_mhz"] for r in rows], color=SLOT[0], marker=MARKERS[0])
+    for x, r in zip(xs, rows):
+        ax2.text(x, r["fmax_mhz"] + 8, f"{r['fmax_mhz']:.1f}", ha="center", va="bottom", fontsize=5.5, color=INK2)
+    ax2.set_xticks(xs)
+    ax2.set_xticklabels([str(k) for k in ks])
+    ax2.set_xlabel("Cores K")
+    ax2.set_ylabel("$f_{\\max}$ (MHz)")
+    # Zero-based axis: the K-to-K differences (a few MHz) are place-and-route
+    # variation, not a trend; a truncated axis would exaggerate them.
+    ax2.set_ylim(0, 1.25 * max(r["fmax_mhz"] for r in rows))
+    ax2.set_xlim(-0.5, len(ks) - 0.5)
+    ax2.set_title("(b)", loc="left")
+    style_axes(ax2)
+
+    fig.tight_layout(w_pad=1.0)
     save(fig, "fig_scaling")
 
 
@@ -301,7 +335,7 @@ def main():
         fig_multilink_delivery(ml, a.scenario)
         fig_scheduler(ml, a.scenario)
 
-    sc = read_csv(SCALING)
+    sc = read_arch_scaling()
     if sc:
         fig_scaling(sc)
 

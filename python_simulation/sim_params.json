@@ -2,8 +2,8 @@
   "_comment": "Timing parameters for multilink_sim.py. Every value has a 'source'. Values marked PLACEHOLDER must be replaced by measurements (plan.md W4) before numbers go into the paper.",
 
   "core": {
-    "fclk_hz": 304.6e6,
-    "source": "scripts/find_fmax.tcl, xc7z020clg400-1, Vivado 2023.2: 3.283 ns met (WNS +0.011 ns). Re-run on 2026.1.",
+    "fclk_hz": 281.7e6,
+    "source": "scripts/find_fmax_ooc.tcl, ascon_aead_array K=1 (current RTL), xc7z020clg400-1, Vivado 2023.2, post-route: 3.550 ns met (WNS +0.101 ns). K=2/4/8: 277.8/281.7/274.0 MHz. Re-run on 2026.1.",
     "cycles": "14 + 9*(N-1) + (1 if AD) + 14, N = AD blocks + PT blocks (RTL-verified, tb_encypt / tb_decrypt)"
   },
 
