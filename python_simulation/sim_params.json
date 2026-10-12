@@ -1,0 +1,60 @@
+{
+  "_comment": "Timing parameters for multilink_sim.py. Every value has a 'source'. Values marked PLACEHOLDER must be replaced by measurements (plan.md W4) before numbers go into the paper.",
+
+  "core": {
+    "fclk_hz": 304.6e6,
+    "source": "scripts/find_fmax.tcl, xc7z020clg400-1, Vivado 2023.2: 3.283 ns met (WNS +0.011 ns). Re-run on 2026.1.",
+    "cycles": "14 + 9*(N-1) + (1 if AD) + 14, N = AD blocks + PT blocks (RTL-verified, tb_encypt / tb_decrypt)"
+  },
+
+  "interfaces": {
+    "stream": {
+      "description": "Data streamed to the core (AXI-Stream / DMA), 32-bit words at fclk; transfers of different cores overlap.",
+      "bytes_per_cycle": 4,
+      "setup_cycles": 8,
+      "shared_bus": false,
+      "source": "model (no measurement yet)"
+    },
+    "axilite": {
+      "description": "CPU drives the AXI4-Lite registers of ascon_aead_axi_multi; one bus shared by all cores.",
+      "access_ns": 150.0,
+      "shared_bus": true,
+      "source": "PLACEHOLDER: typical Zynq-7000 GP0 MMIO access from C; measure on PYNQ-Z1 (W4)"
+    }
+  },
+
+  "software": {
+    "a9_c": {
+      "description": "Ascon-AEAD128 C reference on the Cortex-A9 (PYNQ-Z1 PS, 650 MHz)",
+      "round_ns": 40.0,
+      "per_message_ns": 300.0,
+      "source": "PLACEHOLDER: measure encrypt/decrypt per message type on PYNQ-Z1 (W4)"
+    },
+    "esp32_tinyjambu_prior": {
+      "description": "Prior work (ESP32, TinyJAMBU, software), per message",
+      "encrypt_us": 1199.8,
+      "decrypt_us": 47.1,
+      "source": "jonarta2023securing, Table II rows 5-6 of the current draft"
+    }
+  },
+
+  "link": {
+    "description": "Per-UAV radio link (one channel per UAV)",
+    "rate_bps": 2.0e6,
+    "ip_udp_overhead_bytes": 28,
+    "base_delay_ms": 1.0,
+    "jitter_ms": 0.5,
+    "loss": 0.01,
+    "source": "assumption: 2 Mbps telemetry/C2 radio, 1 ms base delay"
+  },
+
+  "gateway": {
+    "processing_us": 5.0,
+    "source": "assumption: packet handling per message at the GCS / gateway, excluding crypto"
+  },
+
+  "uav": {
+    "processing_us": 5.0,
+    "source": "assumption: packet handling per message on the UAV, excluding crypto"
+  }
+}

@@ -1,0 +1,261 @@
+wrote /mnt/f/Projects/ascon_aead/python_simulation/results/latency_table.csv (6 rows)
+  radio    plain      N=  1 K=1 priority C2 e2e p99   1857.6 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    plain      N= 10 K=1 priority C2 e2e p99   1873.5 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    plain      N= 50 K=1 priority C2 e2e p99   1878.7 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    plain      N=100 K=1 priority C2 e2e p99   1877.3 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  1 K=1 priority C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 10 K=1 priority C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 50 K=1 priority C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.57 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=100 K=1 priority C2 e2e p99   1955.6 us  GW p99 C2      1.60 tel      1.80 us  deliv tel 100.0%  core  1.5% bus  0.0%
+  radio    hw_axilite N=  1 K=1 priority C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  1.3% bus  1.3%
+  radio    hw_axilite N= 10 K=1 priority C2 e2e p99   1972.9 us  GW p99 C2    111.64 tel     97.17 us  deliv tel 100.0%  core  4.5% bus  4.4%
+  radio    hw_axilite N= 50 K=1 priority C2 e2e p99   2011.1 us  GW p99 C2    134.36 tel    143.19 us  deliv tel 100.0%  core 20.2% bus 19.8%
+  radio    hw_axilite N=100 K=1 priority C2 e2e p99   2053.7 us  GW p99 C2    142.52 tel    149.91 us  deliv tel 100.0%  core 39.5% bus 38.7%
+  radio    sw_a9      N=  1 K=1 priority C2 e2e p99   1938.7 us  GW p99 C2     21.53 tel      1.90 us  deliv tel 100.0%  core  0.3% bus  0.0%
+  radio    sw_a9      N= 10 K=1 priority C2 e2e p99   1954.6 us  GW p99 C2      4.17 tel      2.12 us  deliv tel 100.0%  core  1.0% bus  0.0%
+  radio    sw_a9      N= 50 K=1 priority C2 e2e p99   1960.4 us  GW p99 C2     26.81 tel     23.25 us  deliv tel 100.0%  core  4.7% bus  0.0%
+  radio    sw_a9      N=100 K=1 priority C2 e2e p99   1962.8 us  GW p99 C2     27.61 tel     27.04 us  deliv tel 100.0%  core  9.1% bus  0.0%
+  highrate plain      N=  1 K=1 priority C2 e2e p99   1509.7 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  highrate plain      N= 10 K=1 priority C2 e2e p99   1514.0 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  highrate plain      N= 50 K=1 priority C2 e2e p99   1511.5 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  highrate plain      N=100 K=1 priority C2 e2e p99   1510.8 us  GW p99 C2       nan tel       nan us  deliv tel 100.0%  core  0.0% bus  0.0%
+  highrate hw_stream  N=  1 K=1 priority C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.9% bus  0.0%
+  highrate hw_stream  N= 10 K=1 priority C2 e2e p99   1516.3 us  GW p99 C2      5.02 tel      4.35 us  deliv tel 100.0%  core  9.0% bus  0.0%
+  highrate hw_stream  N= 50 K=1 priority C2 e2e p99   1516.1 us  GW p99 C2      5.39 tel      5.23 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=100 K=1 priority C2 e2e p99   1517.8 us  GW p99 C2      5.45 tel      5.37 us  deliv tel 100.0%  core 90.6% bus  0.0%
+  highrate hw_axilite N=  1 K=1 priority C2 e2e p99   1615.2 us  GW p99 C2    122.91 tel    107.04 us  deliv tel 100.0%  core 24.4% bus 24.0%
+  highrate hw_axilite N= 10 K=1 priority C2 e2e p99   1638.9 us  GW p99 C2    145.96 tel    143.19 us  deliv tel 100.0%  core 109.7% bus 107.5%  SATURATED
+  highrate hw_axilite N= 50 K=1 priority C2 e2e p99   1694.9 us  GW p99 C2    145.52 tel    149.37 us  deliv tel 100.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N=100 K=1 priority C2 e2e p99   1680.0 us  GW p99 C2    145.95 tel    155.42 us  deliv tel 100.0%  core 109.7% bus 107.6%  SATURATED
+  highrate sw_a9      N=  1 K=1 priority C2 e2e p99   1516.2 us  GW p99 C2     12.95 tel     24.23 us  deliv tel 100.0%  core  5.2% bus  0.0%
+  highrate sw_a9      N= 10 K=1 priority C2 e2e p99   1527.4 us  GW p99 C2     31.79 tel     30.05 us  deliv tel 100.0%  core 52.2% bus  0.0%
+  highrate sw_a9      N= 50 K=1 priority C2 e2e p99   1539.8 us  GW p99 C2     31.59 tel     31.18 us  deliv tel 100.0%  core 109.7% bus  0.0%  SATURATED
+  highrate sw_a9      N=100 K=1 priority C2 e2e p99   1534.8 us  GW p99 C2     31.54 tel     31.93 us  deliv tel 100.0%  core 109.8% bus  0.0%  SATURATED
+wrote /mnt/f/Projects/ascon_aead/python_simulation/results/config_compare.csv (32 rows)
+  radio    hw_stream  N=  1 K=1 priority C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N=  1 K=1 fifo     C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N=  5 K=1 priority C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N=  5 K=1 fifo     C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 10 K=1 priority C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 10 K=1 fifo     C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 20 K=1 priority C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.3% bus  0.0%
+  radio    hw_stream  N= 20 K=1 fifo     C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.3% bus  0.0%
+  radio    hw_stream  N= 50 K=1 priority C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.57 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N= 50 K=1 fifo     C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.57 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=100 K=1 priority C2 e2e p99   1955.6 us  GW p99 C2      1.60 tel      1.80 us  deliv tel 100.0%  core  1.5% bus  0.0%
+  radio    hw_stream  N=100 K=1 fifo     C2 e2e p99   1955.6 us  GW p99 C2      1.60 tel      1.80 us  deliv tel 100.0%  core  1.5% bus  0.0%
+  radio    hw_stream  N=200 K=1 priority C2 e2e p99   1953.7 us  GW p99 C2      3.46 tel      3.39 us  deliv tel 100.0%  core  3.1% bus  0.0%
+  radio    hw_stream  N=200 K=1 fifo     C2 e2e p99   1953.7 us  GW p99 C2      3.67 tel      3.39 us  deliv tel 100.0%  core  3.1% bus  0.0%
+  radio    hw_stream  N=  1 K=2 priority C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  1 K=2 fifo     C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  5 K=2 priority C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N=  5 K=2 fifo     C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 10 K=2 priority C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 10 K=2 fifo     C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 20 K=2 priority C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 20 K=2 fifo     C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 50 K=2 priority C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_stream  N= 50 K=2 fifo     C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_stream  N=100 K=2 priority C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=100 K=2 fifo     C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=200 K=2 priority C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.6% bus  0.0%
+  radio    hw_stream  N=200 K=2 fifo     C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.6% bus  0.0%
+  radio    hw_stream  N=  1 K=4 priority C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  1 K=4 fifo     C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  5 K=4 priority C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  5 K=4 fifo     C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 10 K=4 priority C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 10 K=4 fifo     C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 20 K=4 priority C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 20 K=4 fifo     C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 50 K=4 priority C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N= 50 K=4 fifo     C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N=100 K=4 priority C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_stream  N=100 K=4 fifo     C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_stream  N=200 K=4 priority C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=200 K=4 fifo     C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.8% bus  0.0%
+  radio    hw_stream  N=  1 K=8 priority C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  1 K=8 fifo     C2 e2e p99   1934.4 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  5 K=8 priority C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N=  5 K=8 fifo     C2 e2e p99   1950.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 10 K=8 priority C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 10 K=8 fifo     C2 e2e p99   1950.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 20 K=8 priority C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 20 K=8 fifo     C2 e2e p99   2005.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.0% bus  0.0%
+  radio    hw_stream  N= 50 K=8 priority C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N= 50 K=8 fifo     C2 e2e p99   1956.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  radio    hw_stream  N=100 K=8 priority C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N=100 K=8 fifo     C2 e2e p99   1955.6 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  radio    hw_stream  N=200 K=8 priority C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_stream  N=200 K=8 fifo     C2 e2e p99   1953.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.4% bus  0.0%
+  radio    hw_axilite N=  1 K=1 priority C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  1.3% bus  1.3%
+  radio    hw_axilite N=  1 K=1 fifo     C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  1.3% bus  1.3%
+  radio    hw_axilite N=  5 K=1 priority C2 e2e p99   1981.4 us  GW p99 C2     61.29 tel    136.58 us  deliv tel 100.0%  core  2.9% bus  2.8%
+  radio    hw_axilite N=  5 K=1 fifo     C2 e2e p99   1981.4 us  GW p99 C2     61.29 tel    136.58 us  deliv tel 100.0%  core  2.9% bus  2.8%
+  radio    hw_axilite N= 10 K=1 priority C2 e2e p99   1972.9 us  GW p99 C2    111.64 tel     97.17 us  deliv tel 100.0%  core  4.5% bus  4.4%
+  radio    hw_axilite N= 10 K=1 fifo     C2 e2e p99   1972.9 us  GW p99 C2    111.64 tel     97.17 us  deliv tel 100.0%  core  4.5% bus  4.4%
+  radio    hw_axilite N= 20 K=1 priority C2 e2e p99   2028.0 us  GW p99 C2    122.19 tel    130.12 us  deliv tel 100.0%  core  7.9% bus  7.7%
+  radio    hw_axilite N= 20 K=1 fifo     C2 e2e p99   2028.0 us  GW p99 C2    125.07 tel    132.28 us  deliv tel 100.0%  core  7.9% bus  7.7%
+  radio    hw_axilite N= 50 K=1 priority C2 e2e p99   2011.1 us  GW p99 C2    134.36 tel    143.19 us  deliv tel 100.0%  core 20.2% bus 19.8%
+  radio    hw_axilite N= 50 K=1 fifo     C2 e2e p99   2136.7 us  GW p99 C2    295.52 tel    274.40 us  deliv tel 100.0%  core 20.2% bus 19.8%
+  radio    hw_axilite N=100 K=1 priority C2 e2e p99   2053.7 us  GW p99 C2    142.52 tel    149.91 us  deliv tel 100.0%  core 39.5% bus 38.7%
+  radio    hw_axilite N=100 K=1 fifo     C2 e2e p99   2128.3 us  GW p99 C2    302.71 tel    321.85 us  deliv tel 100.0%  core 39.5% bus 38.7%
+  radio    hw_axilite N=200 K=1 priority C2 e2e p99   2065.3 us  GW p99 C2    145.76 tel    171.61 us  deliv tel 100.0%  core 79.0% bus 77.4%
+  radio    hw_axilite N=200 K=1 fifo     C2 e2e p99   2417.0 us  GW p99 C2    604.95 tel    599.44 us  deliv tel 100.0%  core 79.0% bus 77.4%
+  radio    hw_axilite N=  1 K=2 priority C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.7% bus  1.3%
+  radio    hw_axilite N=  1 K=2 fifo     C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.7% bus  1.3%
+  radio    hw_axilite N=  5 K=2 priority C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  1.8% bus  2.8%
+  radio    hw_axilite N=  5 K=2 fifo     C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  1.8% bus  2.8%
+  radio    hw_axilite N= 10 K=2 priority C2 e2e p99   1972.9 us  GW p99 C2    108.74 tel     94.32 us  deliv tel 100.0%  core  2.6% bus  4.4%
+  radio    hw_axilite N= 10 K=2 fifo     C2 e2e p99   1972.9 us  GW p99 C2    108.74 tel     94.32 us  deliv tel 100.0%  core  2.6% bus  4.4%
+  radio    hw_axilite N= 20 K=2 priority C2 e2e p99   2035.2 us  GW p99 C2    119.69 tel    129.43 us  deliv tel 100.0%  core  4.6% bus  7.7%
+  radio    hw_axilite N= 20 K=2 fifo     C2 e2e p99   2035.2 us  GW p99 C2    119.69 tel    129.43 us  deliv tel 100.0%  core  4.6% bus  7.7%
+  radio    hw_axilite N= 50 K=2 priority C2 e2e p99   2050.7 us  GW p99 C2    180.22 tel    187.73 us  deliv tel 100.0%  core 14.4% bus 19.8%
+  radio    hw_axilite N= 50 K=2 fifo     C2 e2e p99   2129.4 us  GW p99 C2    307.47 tel    267.70 us  deliv tel 100.0%  core 14.6% bus 19.8%
+  radio    hw_axilite N=100 K=2 priority C2 e2e p99   2083.6 us  GW p99 C2    232.38 tel    250.38 us  deliv tel 100.0%  core 31.2% bus 38.7%
+  radio    hw_axilite N=100 K=2 fifo     C2 e2e p99   2141.2 us  GW p99 C2    299.80 tel    315.02 us  deliv tel 100.0%  core 31.5% bus 38.7%
+  radio    hw_axilite N=200 K=2 priority C2 e2e p99   2136.2 us  GW p99 C2    265.19 tel    297.74 us  deliv tel 100.0%  core 72.2% bus 77.4%
+  radio    hw_axilite N=200 K=2 fifo     C2 e2e p99   2403.7 us  GW p99 C2    598.59 tel    604.30 us  deliv tel 100.0%  core 72.9% bus 77.5%
+  radio    hw_axilite N=  1 K=4 priority C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.3% bus  1.3%
+  radio    hw_axilite N=  1 K=4 fifo     C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.3% bus  1.3%
+  radio    hw_axilite N=  5 K=4 priority C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  0.9% bus  2.8%
+  radio    hw_axilite N=  5 K=4 fifo     C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  0.9% bus  2.8%
+  radio    hw_axilite N= 10 K=4 priority C2 e2e p99   1972.9 us  GW p99 C2    107.42 tel    101.25 us  deliv tel 100.0%  core  1.3% bus  4.4%
+  radio    hw_axilite N= 10 K=4 fifo     C2 e2e p99   1972.9 us  GW p99 C2    108.74 tel     94.32 us  deliv tel 100.0%  core  1.3% bus  4.4%
+  radio    hw_axilite N= 20 K=4 priority C2 e2e p99   2035.2 us  GW p99 C2    115.50 tel    127.27 us  deliv tel 100.0%  core  2.3% bus  7.7%
+  radio    hw_axilite N= 20 K=4 fifo     C2 e2e p99   2035.2 us  GW p99 C2    119.69 tel    129.43 us  deliv tel 100.0%  core  2.4% bus  7.7%
+  radio    hw_axilite N= 50 K=4 priority C2 e2e p99   2039.4 us  GW p99 C2    132.39 tel    133.41 us  deliv tel 100.0%  core  8.1% bus 19.8%
+  radio    hw_axilite N= 50 K=4 fifo     C2 e2e p99   2129.4 us  GW p99 C2    307.47 tel    267.70 us  deliv tel 100.0%  core  9.2% bus 19.8%
+  radio    hw_axilite N=100 K=4 priority C2 e2e p99   2025.4 us  GW p99 C2    132.42 tel    137.49 us  deliv tel 100.0%  core 18.5% bus 38.7%
+  radio    hw_axilite N=100 K=4 fifo     C2 e2e p99   2141.2 us  GW p99 C2    299.80 tel    315.02 us  deliv tel 100.0%  core 21.7% bus 38.7%
+  radio    hw_axilite N=200 K=4 priority C2 e2e p99   2062.7 us  GW p99 C2    201.69 tel    239.64 us  deliv tel 100.0%  core 55.3% bus 77.6%
+  radio    hw_axilite N=200 K=4 fifo     C2 e2e p99   2403.7 us  GW p99 C2    598.59 tel    604.30 us  deliv tel 100.0%  core 64.7% bus 77.5%
+  radio    hw_axilite N=  1 K=8 priority C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.2% bus  1.3%
+  radio    hw_axilite N=  1 K=8 fifo     C2 e2e p99   1954.8 us  GW p99 C2      9.21 tel     55.01 us  deliv tel 100.0%  core  0.2% bus  1.3%
+  radio    hw_axilite N=  5 K=8 priority C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  0.4% bus  2.8%
+  radio    hw_axilite N=  5 K=8 fifo     C2 e2e p99   1984.4 us  GW p99 C2     64.15 tel    131.40 us  deliv tel 100.0%  core  0.4% bus  2.8%
+  radio    hw_axilite N= 10 K=8 priority C2 e2e p99   1972.9 us  GW p99 C2    107.42 tel    101.25 us  deliv tel 100.0%  core  0.7% bus  4.4%
+  radio    hw_axilite N= 10 K=8 fifo     C2 e2e p99   1972.9 us  GW p99 C2    108.74 tel     94.32 us  deliv tel 100.0%  core  0.7% bus  4.4%
+  radio    hw_axilite N= 20 K=8 priority C2 e2e p99   2035.2 us  GW p99 C2    115.50 tel    127.27 us  deliv tel 100.0%  core  1.2% bus  7.7%
+  radio    hw_axilite N= 20 K=8 fifo     C2 e2e p99   2035.2 us  GW p99 C2    119.69 tel    129.43 us  deliv tel 100.0%  core  1.2% bus  7.7%
+  radio    hw_axilite N= 50 K=8 priority C2 e2e p99   2032.1 us  GW p99 C2    130.36 tel    133.16 us  deliv tel 100.0%  core  4.1% bus 19.8%
+  radio    hw_axilite N= 50 K=8 fifo     C2 e2e p99   2129.4 us  GW p99 C2    307.47 tel    267.70 us  deliv tel 100.0%  core  4.8% bus 19.8%
+  radio    hw_axilite N=100 K=8 priority C2 e2e p99   2024.3 us  GW p99 C2    131.34 tel    136.52 us  deliv tel 100.0%  core  9.4% bus 38.7%
+  radio    hw_axilite N=100 K=8 fifo     C2 e2e p99   2141.2 us  GW p99 C2    299.80 tel    315.02 us  deliv tel 100.0%  core 12.2% bus 38.7%
+  radio    hw_axilite N=200 K=8 priority C2 e2e p99   2031.7 us  GW p99 C2    132.87 tel    153.67 us  deliv tel 100.0%  core 31.2% bus 77.5%
+  radio    hw_axilite N=200 K=8 fifo     C2 e2e p99   2403.7 us  GW p99 C2    598.59 tel    604.30 us  deliv tel 100.0%  core 49.9% bus 77.5%
+  highrate hw_stream  N=  1 K=1 priority C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.9% bus  0.0%
+  highrate hw_stream  N=  1 K=1 fifo     C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.9% bus  0.0%
+  highrate hw_stream  N=  5 K=1 priority C2 e2e p99   1516.2 us  GW p99 C2      3.84 tel      0.42 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N=  5 K=1 fifo     C2 e2e p99   1516.2 us  GW p99 C2      3.84 tel      0.42 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N= 10 K=1 priority C2 e2e p99   1516.3 us  GW p99 C2      5.02 tel      4.35 us  deliv tel 100.0%  core  9.0% bus  0.0%
+  highrate hw_stream  N= 10 K=1 fifo     C2 e2e p99   1516.3 us  GW p99 C2      5.14 tel      5.17 us  deliv tel 100.0%  core  9.0% bus  0.0%
+  highrate hw_stream  N= 20 K=1 priority C2 e2e p99   1515.1 us  GW p99 C2      5.14 tel      4.69 us  deliv tel 100.0%  core 18.1% bus  0.0%
+  highrate hw_stream  N= 20 K=1 fifo     C2 e2e p99   1515.1 us  GW p99 C2      6.90 tel      7.69 us  deliv tel 100.0%  core 18.1% bus  0.0%
+  highrate hw_stream  N= 50 K=1 priority C2 e2e p99   1516.1 us  GW p99 C2      5.39 tel      5.23 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N= 50 K=1 fifo     C2 e2e p99   1516.3 us  GW p99 C2     14.82 tel     13.39 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=100 K=1 priority C2 e2e p99   1517.8 us  GW p99 C2      5.45 tel      5.37 us  deliv tel 100.0%  core 90.6% bus  0.0%
+  highrate hw_stream  N=100 K=1 fifo     C2 e2e p99   1536.1 us  GW p99 C2     58.64 tel     58.94 us  deliv tel 100.0%  core 90.6% bus  0.0%
+  highrate hw_stream  N=200 K=1 priority C2 e2e p99   1518.2 us  GW p99 C2      5.47 tel      5.37 us  deliv tel 100.0%  core 109.7% bus  0.0%  SATURATED
+  highrate hw_stream  N=200 K=1 fifo     C2 e2e p99 244474.4 us  GW p99 C2 243413.08 tel 243705.42 us  deliv tel  50.4%  core 109.7% bus  0.0%  SATURATED
+  highrate hw_stream  N=  1 K=2 priority C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.5% bus  0.0%
+  highrate hw_stream  N=  1 K=2 fifo     C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.5% bus  0.0%
+  highrate hw_stream  N=  5 K=2 priority C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N=  5 K=2 fifo     C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N= 10 K=2 priority C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N= 10 K=2 fifo     C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N= 20 K=2 priority C2 e2e p99   1515.1 us  GW p99 C2      1.48 tel      0.88 us  deliv tel 100.0%  core  9.0% bus  0.0%
+  highrate hw_stream  N= 20 K=2 fifo     C2 e2e p99   1515.1 us  GW p99 C2      1.48 tel      0.88 us  deliv tel 100.0%  core  9.0% bus  0.0%
+  highrate hw_stream  N= 50 K=2 priority C2 e2e p99   1514.0 us  GW p99 C2      3.33 tel      3.23 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_stream  N= 50 K=2 fifo     C2 e2e p99   1514.0 us  GW p99 C2      4.26 tel      3.74 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_stream  N=100 K=2 priority C2 e2e p99   1516.2 us  GW p99 C2      4.32 tel      4.22 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=100 K=2 fifo     C2 e2e p99   1515.9 us  GW p99 C2      7.37 tel      6.83 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=200 K=2 priority C2 e2e p99   1516.9 us  GW p99 C2      5.01 tel      4.96 us  deliv tel 100.0%  core 90.6% bus  0.0%
+  highrate hw_stream  N=200 K=2 fifo     C2 e2e p99   1525.9 us  GW p99 C2     35.11 tel     35.73 us  deliv tel 100.0%  core 90.6% bus  0.0%
+  highrate hw_stream  N=  1 K=4 priority C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  highrate hw_stream  N=  1 K=4 fifo     C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.2% bus  0.0%
+  highrate hw_stream  N=  5 K=4 priority C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.1% bus  0.0%
+  highrate hw_stream  N=  5 K=4 fifo     C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.1% bus  0.0%
+  highrate hw_stream  N= 10 K=4 priority C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N= 10 K=4 fifo     C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N= 20 K=4 priority C2 e2e p99   1514.5 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N= 20 K=4 fifo     C2 e2e p99   1514.5 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  4.5% bus  0.0%
+  highrate hw_stream  N= 50 K=4 priority C2 e2e p99   1513.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 11.3% bus  0.0%
+  highrate hw_stream  N= 50 K=4 fifo     C2 e2e p99   1513.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 11.3% bus  0.0%
+  highrate hw_stream  N=100 K=4 priority C2 e2e p99   1515.1 us  GW p99 C2      0.76 tel      0.55 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_stream  N=100 K=4 fifo     C2 e2e p99   1515.1 us  GW p99 C2      0.82 tel      0.59 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_stream  N=200 K=4 priority C2 e2e p99   1515.2 us  GW p99 C2      2.47 tel      2.76 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=200 K=4 fifo     C2 e2e p99   1515.2 us  GW p99 C2      3.49 tel      3.39 us  deliv tel 100.0%  core 45.3% bus  0.0%
+  highrate hw_stream  N=  1 K=8 priority C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  highrate hw_stream  N=  1 K=8 fifo     C2 e2e p99   1512.0 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.1% bus  0.0%
+  highrate hw_stream  N=  5 K=8 priority C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.6% bus  0.0%
+  highrate hw_stream  N=  5 K=8 fifo     C2 e2e p99   1516.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  0.6% bus  0.0%
+  highrate hw_stream  N= 10 K=8 priority C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.1% bus  0.0%
+  highrate hw_stream  N= 10 K=8 fifo     C2 e2e p99   1516.3 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  1.1% bus  0.0%
+  highrate hw_stream  N= 20 K=8 priority C2 e2e p99   1514.5 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N= 20 K=8 fifo     C2 e2e p99   1514.5 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  2.3% bus  0.0%
+  highrate hw_stream  N= 50 K=8 priority C2 e2e p99   1513.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  5.7% bus  0.0%
+  highrate hw_stream  N= 50 K=8 fifo     C2 e2e p99   1513.7 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core  5.7% bus  0.0%
+  highrate hw_stream  N=100 K=8 priority C2 e2e p99   1515.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 11.3% bus  0.0%
+  highrate hw_stream  N=100 K=8 fifo     C2 e2e p99   1515.1 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 11.3% bus  0.0%
+  highrate hw_stream  N=200 K=8 priority C2 e2e p99   1515.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_stream  N=200 K=8 fifo     C2 e2e p99   1515.2 us  GW p99 C2      0.41 tel      0.31 us  deliv tel 100.0%  core 22.6% bus  0.0%
+  highrate hw_axilite N=  1 K=1 priority C2 e2e p99   1615.2 us  GW p99 C2    122.91 tel    107.04 us  deliv tel 100.0%  core 24.4% bus 24.0%
+  highrate hw_axilite N=  1 K=1 fifo     C2 e2e p99   1615.2 us  GW p99 C2    122.91 tel    107.04 us  deliv tel 100.0%  core 24.4% bus 24.0%
+  highrate hw_axilite N=  5 K=1 priority C2 e2e p99   1670.1 us  GW p99 C2    143.03 tel    143.15 us  deliv tel 100.0%  core 109.7% bus 107.5%  SATURATED
+  highrate hw_axilite N=  5 K=1 fifo     C2 e2e p99  99415.9 us  GW p99 C2  98727.70 tel  98104.21 us  deliv tel  89.2%  core 109.7% bus 107.5%  SATURATED
+  highrate hw_axilite N= 10 K=1 priority C2 e2e p99   1638.9 us  GW p99 C2    145.96 tel    143.19 us  deliv tel 100.0%  core 109.7% bus 107.5%  SATURATED
+  highrate hw_axilite N= 10 K=1 fifo     C2 e2e p99 322947.9 us  GW p99 C2 322620.81 tel 319551.95 us  deliv tel  33.1%  core 109.7% bus 107.5%  SATURATED
+  highrate hw_axilite N= 20 K=1 priority C2 e2e p99   1673.2 us  GW p99 C2    143.17 tel    143.30 us  deliv tel 100.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N= 20 K=1 fifo     C2 e2e p99 421935.0 us  GW p99 C2 420514.51 tel 435349.60 us  deliv tel   3.5%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N= 50 K=1 priority C2 e2e p99   1694.9 us  GW p99 C2    145.52 tel    149.37 us  deliv tel 100.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N= 50 K=1 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N=100 K=1 priority C2 e2e p99   1680.0 us  GW p99 C2    145.95 tel    155.42 us  deliv tel 100.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N=100 K=1 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 107.6%  SATURATED
+  highrate hw_axilite N=200 K=1 priority C2 e2e p99   1685.2 us  GW p99 C2    145.44 tel    171.33 us  deliv tel 100.0%  core 109.8% bus 107.5%  SATURATED
+  highrate hw_axilite N=200 K=1 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.8% bus 107.6%  SATURATED
+  highrate hw_axilite N=  1 K=2 priority C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core 12.3% bus 24.0%
+  highrate hw_axilite N=  1 K=2 fifo     C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core 12.3% bus 24.0%
+  highrate hw_axilite N=  5 K=2 priority C2 e2e p99   1837.5 us  GW p99 C2    340.70 tel    338.70 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N=  5 K=2 fifo     C2 e2e p99  90208.6 us  GW p99 C2  89629.27 tel  89519.19 us  deliv tel  90.9%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=2 priority C2 e2e p99   1877.2 us  GW p99 C2    341.84 tel    339.08 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=2 fifo     C2 e2e p99 318364.0 us  GW p99 C2 317164.42 tel 316190.70 us  deliv tel  33.9%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=2 priority C2 e2e p99   1818.5 us  GW p99 C2    338.89 tel    341.47 us  deliv tel 100.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=2 fifo     C2 e2e p99 431554.1 us  GW p99 C2 432910.34 tel 430548.28 us  deliv tel   3.9%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=2 priority C2 e2e p99   1777.3 us  GW p99 C2    332.34 tel    326.37 us  deliv tel 100.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=2 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=2 priority C2 e2e p99   1777.2 us  GW p99 C2    282.52 tel    317.05 us  deliv tel 100.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=2 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=200 K=2 priority C2 e2e p99   1775.1 us  GW p99 C2    278.67 tel    319.33 us  deliv tel 100.0%  core 109.7% bus 109.8%  SATURATED
+  highrate hw_axilite N=200 K=2 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.8%  SATURATED
+  highrate hw_axilite N=  1 K=4 priority C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core  6.2% bus 24.0%
+  highrate hw_axilite N=  1 K=4 fifo     C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core  6.2% bus 24.0%
+  highrate hw_axilite N=  5 K=4 priority C2 e2e p99   1837.5 us  GW p99 C2    340.70 tel    338.70 us  deliv tel 100.0%  core 109.5% bus 109.7%  SATURATED
+  highrate hw_axilite N=  5 K=4 fifo     C2 e2e p99  90208.6 us  GW p99 C2  89629.27 tel  89519.19 us  deliv tel  90.9%  core 109.5% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=4 priority C2 e2e p99   1877.2 us  GW p99 C2    340.11 tel    337.86 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=4 fifo     C2 e2e p99 318364.0 us  GW p99 C2 317164.42 tel 316190.70 us  deliv tel  33.9%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=4 priority C2 e2e p99   1816.4 us  GW p99 C2    335.86 tel    341.59 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=4 fifo     C2 e2e p99 431554.1 us  GW p99 C2 432910.34 tel 430548.28 us  deliv tel   3.9%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=4 priority C2 e2e p99   1799.3 us  GW p99 C2    325.87 tel    318.84 us  deliv tel 100.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=4 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=4 priority C2 e2e p99   1765.6 us  GW p99 C2    278.65 tel    311.25 us  deliv tel 100.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=4 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.7%  SATURATED
+  highrate hw_axilite N=200 K=4 priority C2 e2e p99   1766.1 us  GW p99 C2    276.37 tel    315.81 us  deliv tel 100.0%  core 109.7% bus 109.8%  SATURATED
+  highrate hw_axilite N=200 K=4 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.7% bus 109.8%  SATURATED
+  highrate hw_axilite N=  1 K=8 priority C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core  3.1% bus 24.0%
+  highrate hw_axilite N=  1 K=8 fifo     C2 e2e p99   1615.1 us  GW p99 C2    120.01 tel    104.19 us  deliv tel 100.0%  core  3.1% bus 24.0%
+  highrate hw_axilite N=  5 K=8 priority C2 e2e p99   1837.5 us  GW p99 C2    340.70 tel    338.70 us  deliv tel 100.0%  core 109.2% bus 109.7%  SATURATED
+  highrate hw_axilite N=  5 K=8 fifo     C2 e2e p99  90208.6 us  GW p99 C2  89629.27 tel  89519.19 us  deliv tel  90.9%  core 109.3% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=8 priority C2 e2e p99   1877.2 us  GW p99 C2    340.11 tel    337.86 us  deliv tel 100.0%  core 109.5% bus 109.7%  SATURATED
+  highrate hw_axilite N= 10 K=8 fifo     C2 e2e p99 318364.0 us  GW p99 C2 317164.42 tel 316190.70 us  deliv tel  33.9%  core 109.5% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=8 priority C2 e2e p99   1816.4 us  GW p99 C2    335.86 tel    341.59 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 20 K=8 fifo     C2 e2e p99 431554.1 us  GW p99 C2 432910.34 tel 430548.28 us  deliv tel   3.9%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=8 priority C2 e2e p99   1799.3 us  GW p99 C2    325.87 tel    318.84 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N= 50 K=8 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=8 priority C2 e2e p99   1765.6 us  GW p99 C2    278.65 tel    311.25 us  deliv tel 100.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N=100 K=8 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.6% bus 109.7%  SATURATED
+  highrate hw_axilite N=200 K=8 priority C2 e2e p99   1766.1 us  GW p99 C2    276.37 tel    315.81 us  deliv tel 100.0%  core 109.6% bus 109.8%  SATURATED
+  highrate hw_axilite N=200 K=8 fifo     C2 e2e p99      nan us  GW p99 C2       nan tel       nan us  deliv tel   0.0%  core 109.6% bus 109.8%  SATURATED
+wrote /mnt/f/Projects/ascon_aead/python_simulation/results/multilink.csv (224 rows)
+wrote /mnt/f/Projects/ascon_aead/python_simulation/results/security_check.csv (1 rows)
+security: verified 275 frames, failures 0, rejected tag 53, replay 57

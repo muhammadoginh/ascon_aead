@@ -91,41 +91,29 @@ module ascon_aead_datapath(
     );
 
     // ----------------------------------------------------------
-    // Helper functions
+    // Byte masks for padding / truncation
+    // Byte b (b = 0 is the first byte, bits [127-8b -: 8]) is kept when
+    // b < len and carries the 0x80 padding byte when b == len. Each mask bit
+    // is a 5-input compare (one LUT), instead of len*8 shift arithmetic,
+    // so the len -> state path stays short when len comes from a register.
     // ----------------------------------------------------------
-    function [127:0] apply_mask;
-        input [127:0] data;
-        input [4:0]   len;
-        reg [127:0] mask;
-        begin
-            if (len == 0) mask = 128'd0;
-            else if (len == 16) mask = 128'hffffffffffffffffffffffffffffffff;
-            else mask = (128'hffffffffffffffffffffffffffffffff << (128 - len * 8));
-            apply_mask = data & mask;
-        end
-    endfunction
+    wire [127:0] ad_keep, ad_pad, pt_keep, pt_pad;
 
-    function [127:0] apply_pad;
-        input [127:0] data;
-        input [4:0]   len;
-        reg [127:0] mask;
-        reg [127:0] pbyte;
-        begin
-            if (len == 16) begin
-                apply_pad = data;
-            end else begin
-                mask  = (128'hffffffffffffffffffffffffffffffff << (128 - len * 8));
-                pbyte = 128'h80 << (128 - (len + 1) * 8);
-                apply_pad = (data & mask) | pbyte;
-            end
+    genvar gb;
+    generate
+        for (gb = 0; gb < 16; gb = gb + 1) begin : g_byte
+            assign ad_keep[127-8*gb -: 8] = {8{ad_len >  gb}};
+            assign pt_keep[127-8*gb -: 8] = {8{pt_len >  gb}};
+            assign ad_pad [127-8*gb -: 8] = {(ad_len == gb), 7'd0};
+            assign pt_pad [127-8*gb -: 8] = {(pt_len == gb), 7'd0};
         end
-    endfunction
+    endgenerate
 
     // Combinatorial AD/PT helper wires (only valid when inputs asserted)
-    wire [127:0] padded_ad = apply_pad(ad_data, ad_len);
+    wire [127:0] padded_ad = (ad_data & ad_keep) | ad_pad;
     wire [127:0] pt_xored  = {s0 ^ pt_data[127:64], s1 ^ pt_data[63:0]};
     wire [127:0] actual_pt = (saved_mode == 0) ? pt_data : pt_xored;
-    wire [127:0] padded_pt = apply_pad(actual_pt, pt_len);
+    wire [127:0] padded_pt = (actual_pt & pt_keep) | pt_pad;
 
     // ----------------------------------------------------------
     // XOR terms (non-round cycles)
@@ -176,7 +164,7 @@ module ascon_aead_datapath(
     // ----------------------------------------------------------
     // Outputs / status
     // ----------------------------------------------------------
-    assign out_data = out_en ? apply_mask(pt_xored, pt_len) : 128'd0;
+    assign out_data = out_en ? (pt_xored & pt_keep) : 128'd0;
     assign out_last = out_en ? pt_last : 1'b0;
     assign out_len  = out_en ? pt_len  : 5'd0;
     assign tag      = tag_en ? {s3, s4} : 128'd0;
