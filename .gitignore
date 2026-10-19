@@ -1,0 +1,13 @@
+regression/**
+build/**
+scripts/*.log
+scripts/*.jou
+
+**/vivado.log
+**/vivado.jou
+
+# python
+**/__pycache__
+
+# vim
+**/*.swp
