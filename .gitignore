@@ -3,6 +3,8 @@ build/**
 scripts/*.log
 scripts/*.jou
 
+# vivado
+.Xil/**
 **/vivado.log
 **/vivado.jou
 
