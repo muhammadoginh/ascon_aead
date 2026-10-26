@@ -124,7 +124,7 @@ array set tried {}
 set best ""
 set runs 0
 
-proc try {period} {
+proc try_period {period} {
     global tried best runs
     set period [format "%.3f" $period]
     if {[info exists tried($period)]} { return $tried($period) }
@@ -142,12 +142,12 @@ proc try {period} {
 }
 
 # 1. start, and loosen until met
-lassign [try $start] met wns
+lassign [try_period $start] met wns
 set p $start
 if {!$met} {
     set p [expr {ceil(($start - $wns) / $step - 1e-6) * $step}]
     while {$runs < $max_runs} {
-        lassign [try $p] met wns
+        lassign [try_period $p] met wns
         if {$met} break
         set p [expr {$p + $step}]
     }
@@ -157,7 +157,7 @@ if {!$met} {
 set fails 0
 set p [expr {$p - $step}]
 while {$fails < 2 && $runs < $max_runs && $best ne ""} {
-    lassign [try $p] met wns
+    lassign [try_period $p] met wns
     if {$met} { set fails 0 } else { incr fails }
     set p [expr {$p - $step}]
 }

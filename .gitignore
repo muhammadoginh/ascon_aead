@@ -13,3 +13,7 @@ scripts/*.jou
 
 # vim
 **/*.swp
+
+# misc
+.zed/**
+**/.env
