@@ -86,11 +86,16 @@ proc run_period {period} {
     } else {
         synth_design -top $top -part $part -mode out_of_context -generic K=$k
     }
+    # opt_design      -directive Explore
+    # place_design    -directive ExtraTimingOpt
+    # phys_opt_design -directive AggressiveExplore
+    # route_design    -directive AggressiveExplore
+    # phys_opt_design -directive AggressiveExplore
     opt_design      -directive Explore
-    place_design    -directive ExtraTimingOpt
-    phys_opt_design -directive AggressiveExplore
-    route_design    -directive AggressiveExplore
-    phys_opt_design -directive AggressiveExplore
+    place_design    -directive Explore
+    phys_opt_design -directive Explore
+    route_design    -directive Explore
+    phys_opt_design -directive Explore
 
     set wns   [get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup]]
     set whs   [get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -hold]]
@@ -117,7 +122,7 @@ proc log_line {text} {
     flush $log
 }
 log_line "# find_fmax_ooc $name on $part  [clock format [clock seconds]]"
-log_line "# directives: opt Explore, place ExtraTimingOpt, phys_opt/route/post-route phys_opt AggressiveExplore"
+log_line "# directives: opt Explore, place Explore, phys_opt/route/post-route phys_opt Explore"
 log_line [format "# %-7s %-7s %-8s %-8s %-6s %-6s %-7s %-7s %s" period MHz WNS WHS LUT FF P_tot P_dyn result]
 
 array set tried {}

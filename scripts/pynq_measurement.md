@@ -93,7 +93,13 @@ Use the same parts as the comparison works (check licence availability for Virte
 To run all three parts in parallel:
 
 ```shell
-./scripts/find_fmax_ooc_parallel-run.sh
+./scripts/find_fmax_ooc_parallel-run.sh <start_period_xc7a>:<max_runs_xc7a> <start_period_xc7vx>:<max_runs_xc7vx> <start_period_xc7z>:<max_runs_xc7z>
+```
+
+For example, to skip running on `xc7z2020clg400-1`:
+
+```
+./scripts/find_fmax_ooc_parallel-run.sh 2.95:1 1.90:1 3.55:0
 ```
 
 ### B.4 Overlay (if Part A is repeated with 2026.1)
