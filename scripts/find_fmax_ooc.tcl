@@ -26,6 +26,7 @@
 #   -step <ns>        period step              (default 0.05)
 #   -max_runs <n>     safety limit             (default 20)
 #   -part <part>      target part              (default xc7z020clg400-1)
+#   -strat <strat>    ae | explore             (default ae)
 #
 # Results: build/fmax_ooc/<part>/<name>/results.txt, summary.txt, reports
 #=============================================================================
@@ -40,6 +41,7 @@ set start    4.0
 set step     0.05
 set max_runs 20
 set part     "xc7z020clg400-1"
+set strat    "ae"
 
 for {set i 0} {$i < [llength $argv]} {incr i} {
     set a [lindex $argv $i]
@@ -51,6 +53,7 @@ for {set i 0} {$i < [llength $argv]} {incr i} {
         -step     { incr i; set step     [lindex $argv $i] }
         -max_runs { incr i; set max_runs [lindex $argv $i] }
         -part     { incr i; set part     [lindex $argv $i] }
+        -strat    { incr i; set strat    [lindex $argv $i] }
         default {
             puts "ERROR: unknown argument '$a'"
             exit 2
@@ -73,7 +76,7 @@ proc util_of {util name} {
 
 # One synth + impl run; returns {wns whs lut ff p_tot p_dyn}
 proc run_period {period} {
-    global src_dir rtl top k clk part out_dir
+    global src_dir rtl top k clk part out_dir strat
     set xdc [file join $out_dir clock.xdc]
     set fh [open $xdc w]
     puts $fh "create_clock -period $period -name clk \[get_ports $clk\]"
@@ -86,16 +89,19 @@ proc run_period {period} {
     } else {
         synth_design -top $top -part $part -mode out_of_context -generic K=$k
     }
-    # opt_design      -directive Explore
-    # place_design    -directive ExtraTimingOpt
-    # phys_opt_design -directive AggressiveExplore
-    # route_design    -directive AggressiveExplore
-    # phys_opt_design -directive AggressiveExplore
-    opt_design      -directive Explore
-    place_design    -directive Explore
-    phys_opt_design -directive Explore
-    route_design    -directive Explore
-    phys_opt_design -directive Explore
+    if {$strat eq "ae"} {
+        opt_design      -directive Explore
+        place_design    -directive ExtraTimingOpt
+        phys_opt_design -directive AggressiveExplore
+        route_design    -directive AggressiveExplore
+        phys_opt_design -directive AggressiveExplore
+    } else {
+        opt_design      -directive Explore
+        place_design    -directive Explore
+        phys_opt_design -directive Explore
+        route_design    -directive Explore -tns_cleanup
+        phys_opt_design -directive Explore
+    }
 
     set wns   [get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup]]
     set whs   [get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -hold]]
@@ -114,7 +120,11 @@ proc run_period {period} {
     return [list $wns $whs [util_of $util "Slice LUTs\\*?"] [util_of $util "Slice Registers"] $p_tot $p_dyn]
 }
 
-set log [open [file join $out_dir results.txt] w]
+if {$strat eq "ae"} {
+    set log [open [file join $out_dir results-aggressive-explore.txt] w]
+} else {
+    set log [open [file join $out_dir results-explore-prpo.txt] w]
+}
 proc log_line {text} {
     global log
     puts $text
@@ -122,7 +132,11 @@ proc log_line {text} {
     flush $log
 }
 log_line "# find_fmax_ooc $name on $part  [clock format [clock seconds]]"
-log_line "# directives: opt Explore, place Explore, phys_opt/route/post-route phys_opt Explore"
+if {$strat eq "ae"} {
+    log_line "# directives: opt Explore, place ExtraTimingOpt, phys_opt/route/post-route phys_opt AggressiveExplore"
+} else {
+    log_line "# directives: opt Explore, place Explore, phys_opt/route/post-route phys_opt Explore"
+}
 log_line [format "# %-7s %-7s %-8s %-8s %-6s %-6s %-7s %-7s %s" period MHz WNS WHS LUT FF P_tot P_dyn result]
 
 array set tried {}
@@ -176,7 +190,11 @@ lassign $best b_p b_wns b_whs b_lut b_ff b_pt b_pd
 set summary [format "%s,%s,%s,%.1f,%s,%s,%s,%s,%s,%s" $part $name $b_p [expr {1000.0 / $b_p}] $b_wns $b_whs $b_lut $b_ff $b_pt $b_pd]
 log_line "# BEST $b_p ns = [format %.1f [expr {1000.0 / $b_p}]] MHz (WNS $b_wns, WHS $b_whs)"
 close $log
-set fh [open [file join $out_dir summary.txt] w]
+if {$strat eq "ae"} {
+    set fh [open [file join $out_dir summary-aggressive-explore.txt] w]
+} else {
+    set fh [open [file join $out_dir summary-explore-prpo.txt] w]
+}
 puts $fh "part,design,period_ns,fmax_mhz,wns_ns,whs_ns,lut,ff,power_w,dyn_power_w"
 puts $fh $summary
 close $fh

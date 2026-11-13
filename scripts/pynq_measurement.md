@@ -71,10 +71,11 @@ vivado -mode batch -log regression/vivado.log -journal regression/vivado.jou -so
 Pure architecture (`ascon_aead_array`, no bus wrapper), out of context, post place-and-route, tightest period with WNS ≥ 0 and WHS ≥ 0:
 
 ```tcl
-vivado -mode batch -log scripts/fmax_ooc_k1.log -journal scripts/fmax_ooc_k1.jou -source scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 1 -clk clk -start 3.55
-vivado -mode batch -log scripts/fmax_ooc_k2.log -journal scripts/fmax_ooc_k2.jou -source scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 2 -clk clk -start 3.60
-vivado -mode batch -log scripts/fmax_ooc_k4.log -journal scripts/fmax_ooc_k4.jou -source scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 4 -clk clk -start 3.55
-vivado -mode batch -log scripts/fmax_ooc_k8.log -journal scripts/fmax_ooc_k8.jou -source scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 8 -clk clk -start 3.65
+cd build
+vivado -mode batch -log ./fmax_ooc_k1.log -journal ./fmax_ooc_k1.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 1 -clk clk -start 3.55
+vivado -mode batch -log ./fmax_ooc_k2.log -journal ./fmax_ooc_k2.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 2 -clk clk -start 3.60
+vivado -mode batch -log ./fmax_ooc_k4.log -journal ./fmax_ooc_k4.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 4 -clk clk -start 3.55
+vivado -mode batch -log ./fmax_ooc_k8.log -journal ./fmax_ooc_k8.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 8 -clk clk -start 3.65
 ```
 
 The four runs are independent and can run in parallel (about 1–2 h each). Results: `build/fmax_ooc/xc7z020clg400-1/ascon_aead_array_K<k>/summary.txt` and `results.txt` (every period tried). Do **not** report a frequency from a failing period.
@@ -93,13 +94,13 @@ Use the same parts as the comparison works (check licence availability for Virte
 To run all three parts in parallel:
 
 ```shell
-./scripts/find_fmax_ooc_parallel-run.sh <start_period_xc7a>:<max_runs_xc7a> <start_period_xc7vx>:<max_runs_xc7vx> <start_period_xc7z>:<max_runs_xc7z>
+./scripts/find_fmax_ooc_parallel-run.sh <start_period_xc7a>:<max_runs_xc7a> <start_period_xc7vx>:<max_runs_xc7vx> <start_period_xc7z>:<max_runs_xc7z> <strat>
 ```
 
-For example, to skip running on `xc7z2020clg400-1`:
+For example, to use *AsconAEAD128_AggressiveExplore* strategy and skip running on `xc7z2020clg400-1`:
 
-```
-./scripts/find_fmax_ooc_parallel-run.sh 2.95:1 1.90:1 3.55:0
+```shell
+./scripts/find_fmax_ooc_parallel-run.sh 2.95:1 1.90:1 3.55:0 ae
 ```
 
 ### B.4 Overlay (if Part A is repeated with 2026.1)
