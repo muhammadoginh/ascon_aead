@@ -72,10 +72,10 @@ Pure architecture (`ascon_aead_array`, no bus wrapper), out of context, post pla
 
 ```tcl
 cd build
-vivado -mode batch -log ./fmax_ooc_k1.log -journal ./fmax_ooc_k1.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 1 -clk clk -start 3.55
-vivado -mode batch -log ./fmax_ooc_k2.log -journal ./fmax_ooc_k2.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 2 -clk clk -start 3.60
-vivado -mode batch -log ./fmax_ooc_k4.log -journal ./fmax_ooc_k4.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 4 -clk clk -start 3.55
-vivado -mode batch -log ./fmax_ooc_k8.log -journal ./fmax_ooc_k8.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 8 -clk clk -start 3.65
+vivado -mode batch -log ./fmax_ooc_k1.log -journal ./fmax_ooc_k1.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 1 -clk clk -max_runs 1 -start 3.55 -strat ae
+vivado -mode batch -log ./fmax_ooc_k2.log -journal ./fmax_ooc_k2.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 2 -clk clk -max_runs 1 -start 3.60 -strat ae
+vivado -mode batch -log ./fmax_ooc_k4.log -journal ./fmax_ooc_k4.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 4 -clk clk -max_runs 1 -start 3.55 -strat ae
+vivado -mode batch -log ./fmax_ooc_k8.log -journal ./fmax_ooc_k8.jou -source ../scripts/find_fmax_ooc.tcl -tclargs -top ascon_aead_array -k 8 -clk clk -max_runs 1 -start 3.65 -strat ae
 ```
 
 The four runs are independent and can run in parallel (about 1–2 h each). Results: `build/fmax_ooc/xc7z020clg400-1/ascon_aead_array_K<k>/summary.txt` and `results.txt` (every period tried). Do **not** report a frequency from a failing period.
