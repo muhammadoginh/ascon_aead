@@ -1,0 +1,22 @@
+regression/**
+build/**
+scripts/*.log
+scripts/*.jou
+
+# test vectors
+python_simulation/*tv.txt
+
+# vivado
+.Xil/**
+**/vivado.log
+**/vivado.jou
+
+# python
+**/__pycache__
+
+# vim
+**/*.swp
+
+# misc
+.zed/**
+**/.env
